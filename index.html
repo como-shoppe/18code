@@ -79,45 +79,41 @@
     <div class="section-title">📍 全站折扣券</div>
     <button class="coupon-btn" onclick="copyAndGo('SHAFS18')">全站滿 $100 折 $20</button>
 
-    <!-- 全站 $299-$30 -->
-    <div class="section-title">📍 全站 $299-$30</div>
-    <button class="coupon-btn" onclick="copyAndGo('FMAPP260918')">全家 滿 $299 折 $30</button>
-
     <!-- 商城折扣券 -->
     <div class="section-title">📍 商城折扣券</div>
     <button class="coupon-btn" onclick="copyAndGo('FMAPP260918')">全家 商城滿 $299 折 $30</button>
 
     <!-- 社群賣家滿 $999 折 $100 -->
     <div class="section-title">📍 社群賣家滿 $999 折 $100</div>
-    <button class="coupon-btn" onclick="copyAndGo('ZTAFF100')">社群賣家滿 $999 折 $100 【ZTAFF100】</button>
-    <button class="coupon-btn" onclick="copyAndGo('0918MTOB2')">社群賣家滿 $999 折 $100 【0918MTOB2】</button>
-    <button class="coupon-btn" onclick="copyAndGo('0918NDD2')">社群賣家滿 $999 折 $100 【0918NDD2】</button>
+    <button class="coupon-btn" onclick="copyAndGo('ZTAFF100')">社群賣家滿 $999 折 $100 第一組</button>
+    <button class="coupon-btn" onclick="copyAndGo('0918MTOB2')">社群賣家滿 $999 折 $100 第二組</button>
+    <button class="coupon-btn" onclick="copyAndGo('0918NDD2')">社群賣家滿 $999 折 $100 第三組</button>
 
     <!-- 社群賣家滿 $499 折 $40 -->
     <div class="section-title">📍 社群賣家滿 $499 折 $40</div>
-    <button class="coupon-btn" onclick="copyAndGo('ZTAFF40')">社群賣家滿 $499 折 $40 【ZTAFF40】</button>
-    <button class="coupon-btn" onclick="copyAndGo('0918MTOB1')">社群賣家滿 $499 折 $40 【0918MTOB1】</button>
-    <button class="coupon-btn" onclick="copyAndGo('0918NDD1')">社群賣家滿 $499 折 $40 【0918NDD1】</button>
+    <button class="coupon-btn" onclick="copyAndGo('ZTAFF40')">社群賣家滿 $499 折 $40 第一組</button>
+    <button class="coupon-btn" onclick="copyAndGo('0918MTOB1')">社群賣家滿 $499 折 $40 第二組</button>
+    <button class="coupon-btn" onclick="copyAndGo('0918NDD1')">社群賣家滿 $499 折 $40 第三組</button>
 </div>
 
 <script>
-    // 預設跳轉的蝦皮頁面連結
-    const targetUrl = "https://s.shopee.tw/7VFfwsYZNl";
+    // 更新後的蝦皮跳轉頁面連結
+    const targetUrl = "https://s.shopee.tw/70KCmEFxVr";
 
     function copyAndGo(code) {
         // 使用剪貼簿 API 複製折扣碼
         navigator.clipboard.writeText(code).then(() => {
-            alert("已複製折扣碼：" + code + "\n即將前往蝦皮頁面！");
+            alert("已複製折扣碼！\n即將前往蝦皮頁面！");
             window.location.href = targetUrl;
         }).catch(err => {
-            // 備用複製方案（防舊版瀏覽器不支援 clipboard API）
+            // 備用複製方案（防舊版瀏覽器不支援 API）
             const textInput = document.createElement("input");
             textInput.value = code;
             document.body.appendChild(textInput);
             textInput.select();
             document.execCommand("copy");
             document.body.removeChild(textInput);
-            alert("已複製折扣碼：" + code + "\n即將前往蝦皮頁面！");
+            alert("已複製折扣碼！\n即將前往蝦皮頁面！");
             window.location.href = targetUrl;
         });
     }
@@ -125,4 +121,3 @@
 
 </body>
 </html>
-
